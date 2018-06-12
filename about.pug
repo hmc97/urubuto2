@@ -1,0 +1,46 @@
+extends ./layout
+block content
+  div(style='height:100%')
+    div.shadow.p-3(style="height:100%;background:linear-gradient(rgb(246,198,144),rgb(236,143,115))")
+      div.container(style='height:10%')
+        nav(class="navbar navbar-expand-lg navbar-dark")
+          div
+            img.animated.JackInTheBox(src='logo-Recovered.png' style='width:50px;height:50px')
+          a(class="navbar-brand" href="/") Urubuto
+          button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+            span(class="navbar-toggler-icon")
+          div(class="collapse navbar-collapse" id="navbarSupportedContent")
+            ul(class="navbar-nav mr-auto")
+              li(class="nav-item active")
+                a(class="nav-link" href="/") Account 
+                 span(class="sr-only") (current)
+              li(class="nav-item")
+                a(class="nav-link" href="about") About
+              li(class="nav-item")
+                a(class="nav-link-disabled" href="#")
+        br
+        br
+        br
+        h1(style="color:#FAFAFA").display-5 Connectivity is the key to education.      
+          hr(class="my-4" style='color:#8a79af') 
+          p.lead
+            | BK Techouse created Urubuto to connect students, parents, and teachers. With our software, parents can keep track of their childrens' academic progress and transfer funds, while students can moniter their overall performance. If you'd like to find out more, please visit our parent site. 
+            a.btn.btn-white.btn-sm(href='https://www.bktechouse.rw/', role='button') See more
+
+  footer(class="navbar" style="height:11%;width:100%;background-color:#f9f9f9")
+    div(class="container align-items-center")
+      span(class="text-muted") Urubuto
+       small designed by cedrick
+      span 
+       b PoweredBy
+       small BK_techHouse
+      div
+        a.ml-2(href='https://twitter.com/bktechouse')
+          img.inline(src='twitter.png' style='width:30px;height:30px')
+        a.ml-2(href='https://www.facebook.com/BKTecHouseltd')
+          img.inline(src='facebook.png' style='width:30px;height:30px')
+        a.ml-2(href='https://www.instagram.com/bktechouseltd.rw/')
+          img.inline(src='instagram.png' style='width:30px;height:30px')
+
+  
+ 
