@@ -1,5 +1,6 @@
 extends ./layout
 block content
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
   div(style='height:100%')
     div.shadow.p-3(style="height:100%;background:linear-gradient(rgb(246,198,144),rgb(236,143,115))")
       div.container(style='height:10%')
@@ -20,13 +21,145 @@ block content
                 a(class="nav-link-disabled" href="#")
         br
         br
-        br
-        h1(style="color:#FAFAFA").display-5 Connectivity is the key to education.      
-          hr(class="my-4" style='color:#8a79af') 
-          p.lead
-            | BK Techouse created Urubuto to connect students, parents, and teachers. With our software, parents can keep track of their childrens' academic progress and transfer funds, while students can moniter their overall performance. If you'd like to find out more, please visit our parent site. 
+        h1(style="font-size:5vw;color:#FAFAFA").display-5 Connectivity is the key to education.      
+          hr.my-4(style='background-color:white') 
+          p.lead(style="font-size:1.75vw")
+            | BK Techouse created Urubuto to improve the lives of Rwandan youth. Our product connects students, parents, and teachers for the purpose of improved communication and knowledge for all parties involved. With Urubuto, schools experience visible increases in productivity, efficiency, and transparency. Parents are given valuable front row insights into their childrens' educations, and benefit from our integrated school fee payment module. If you'd like to find out what else BK Techouse is up to these days, please visit our website.   
             a.btn.btn-white.btn-sm(href='https://www.bktechouse.rw/', role='button') See more
+          p.lead(style="font-size:1.75vw")
+            | With nearly 100 schools using our software across Rwanda, Urubuto is just getting started. We're committed to bringing consistent value to our customers, and most importantly to brightening the futures of our youth. 
+            br
+            br
+            br
+            br 
+            br
+            
+          div.row 
+              div.col-4
+                div.container.d-flex.justify-content-right.align-items-center(style='height:70%')
+                  div.card.shadow(style="width: 18rem;")
+                    div.card-body
+                      div.d-flex.justify-content-center.align-items-center
+                        img(src='bkt 1.jpg' style='max-width:100%;height:auto')
+              div.col-4
+                div.container.d-flex.justify-content-right.align-items-center(style='height:70%')
+                  div.card.shadow(style="width: 18rem;")
+                    div.card-body
+                      div.d-flex.justify-content-center.align-items-center
+                        img(src='bkt3.jpeg' style='max-width:100%;height:auto')
+              div.col-4
+                div.container.d-flex.justify-content-center.align-items-center(style='height:70%')
+                  div.card.shadow(style="width: 18rem;")
+                    div.card-body
+                      div.d-flex.justify-content-center.align-items-center
+                        img(src='bkt2.jpg' style='max-width:100%;height:auto%')
+      
+  
+  div(style='height:100%;background:#13293d')
+      br
+      br
+      div.container(style='height:10%')
+        h1(style="font-size:5vw;color:#FAFAFA").display-5 Making change, one school at a time.
+          hr.my-4(style='background-color:white')
+          p.lead(style="font-size:1.5vw") Urubuto serves nearly 100 schools across Rwanda. Wondering who's with us? Find out below!
+        div.container.d-flex.justify-content-left.align-items-center(style='height:650%')
+          div.card.shadow(style="height:25rem; width: 25rem;")
+            div.card-body
+              div.d-flex.justify-content-center.align-items-center
+                div(style="height:350px;overflow:auto;")
+                  //- input.border-bottom(style="border:none", type="text", id="myInput", onkeyup="myFunction()" placeholder="Type to search")
+                  table#myTable.table.table-light
+                        tr
+                          // When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:
+                          th(onclick='sortTable(0)') School Name    
+                          th(onclick='sortTable(1)') District  
+                           
+                        tr
+                          td      
+                          td 
 
+                        script.
+                          
+                          function sortTable(n) {
+                          var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                          table = document.getElementById("myTable");
+                          switching = true;
+                          //Set the sorting direction to ascending:
+                          dir = "asc";
+                          /*Make a loop that will continue until
+                          no switching has been done:*/
+                          while (switching) {
+                          //start by saying: no switching is done:
+                          switching = false;
+                          rows = table.getElementsByTagName("TR");
+                          /*Loop through all table rows (except the
+                          first, which contains table headers):*/
+                          for (i = 1; i < (rows.length - 1); i++) {
+                          //start by saying there should be no switching:
+                          shouldSwitch = false;
+                          /*Get the two elements you want to compare,
+                          one from current row and one from the next:*/
+                          x = rows[i].getElementsByTagName("TD")[n];
+                          y = rows[i + 1].getElementsByTagName("TD")[n];
+                          /*check if the two rows should switch place,
+                          based on the direction, asc or desc:*/
+                          if (dir == "asc") {
+                          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                          //if so, mark as a switch and break the loop:
+                          shouldSwitch= true;
+                          break;
+                          }
+                          } else if (dir == "desc") {
+                          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                          //if so, mark as a switch and break the loop:
+                          shouldSwitch = true;
+                          break;
+                          }
+                          }
+                          }
+                          if (shouldSwitch) {
+                          /*If a switch has been marked, make the switch
+                          and mark that a switch has been done:*/
+                          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                          switching = true;
+                          //Each time a switch is done, increase this count by 1:
+                          switchcount ++;
+                          } else {
+                          /*If no switching has been done AND the direction is "asc",
+                          set the direction to "desc" and run the while loop again.*/
+                          if (switchcount == 0 && dir == "asc") {
+                          dir = "desc";
+                          switching = true;
+                          }
+                          }
+                          }
+                          }
+                        //- function myFunction() {
+                        //-   var input, filter, table, tr, td, i;
+                        //-   input = document.getElementById("myInput");
+                        //-   filter = input.value.toUpperCase();
+                        //-   table = document.getElementById("myTable");
+                        //-   tr = table.getElementsByTagName("tr");
+                        //-   for (i = 0; i < tr.length; i++) {
+                        //-     td = tr[i].getElementsByTagName("td")[0];
+                        //-     td = tr[i].getElementsByTagName("td")[1];
+                        //- 
+                        //-     if (td) {
+                        //-       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        //-         tr[i].style.display = "";
+                        //-       } else {
+                        //-         tr[i].style.display = "none";
+                        //-       }
+                        //-     }       
+                        //-   }
+                        //- }
+
+      br
+      br
+      br
+      br
+      br
+          
   footer(class="navbar" style="height:11%;width:100%;background-color:#f9f9f9")
     div(class="container align-items-center")
       span(class="text-muted") Urubuto
@@ -42,5 +175,5 @@ block content
         a.ml-2(href='https://www.instagram.com/bktechouseltd.rw/')
           img.inline(src='instagram.png' style='width:30px;height:30px')
 
-  
+
  
